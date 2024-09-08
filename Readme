@@ -1,0 +1,4 @@
+backend start = nodemon
+frontend start = npm start
+renew folder structure = node generateFolderStructure.js
+start both from front end = npm run start:all
