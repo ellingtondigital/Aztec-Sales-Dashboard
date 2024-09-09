@@ -52,10 +52,5 @@
     "concurrently": "^8.2.2",
     "nodemon": "^3.1.4"
   },
-  {
-  "engines": {
-    "node": "16.x"
-  }
-}
   "proxy": "https://phpstack-1106520-4820851.cloudwaysapps.com:5000"
 }
