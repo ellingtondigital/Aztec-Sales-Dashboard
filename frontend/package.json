@@ -53,4 +53,7 @@
     "nodemon": "^3.1.4"
   },
   "proxy": "https://phpstack-1106520-4820851.cloudwaysapps.com:5000"
+  "engines": {
+    "node": "20.17.0"
+    }
 }
