@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
-    "build": ,"NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start:all": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
