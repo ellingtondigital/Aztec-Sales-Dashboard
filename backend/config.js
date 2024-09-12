@@ -8,7 +8,7 @@ module.exports = {
     //   database: 'xldashboard'
     // }
 
-    // baseUrl: 'http://167.99.120.218:5000',
+    baseUrl: 'http://167.99.120.218:5000',
     mysql: {
         port: 3306,
         host: '167.99.120.218',
