@@ -35,12 +35,11 @@ jobs:
           host: ${{ secrets.DROPLET_IP }}
           username: ${{ secrets.DROPLET_USER }}
           key: ${{ secrets.DROPLET_SSH_KEY }}
-          script: |
+          run: |
             echo "Successfully connected to the server"
-            ls -la /home/${{ secrets.DROPLET_USER }}  # List files in the home directory
-            # Navigate to backend folder, pull latest changes, install dependencies, and restart PM2
+            ls -la /home/${{ secrets.DROPLET_USER }}
             cd /app/aztec
             git pull origin main
             cd /app/aztec/backend
             npm install
-            pm2 restart all  # Assuming PM2 is already managing your backend process
+            pm2 restart all
