@@ -28,6 +28,16 @@ jobs:
         run: |
           CI=false npm run build
 
+      # Copy the frontend build files to the server
+      - name: Copy frontend build files
+        uses: appleboy/scp-action@v0.1.0
+        with:
+          host: ${{ secrets.DROPLET_IP }}
+          username: ${{ secrets.DROPLET_USER }}
+          key: ${{ secrets.DROPLET_SSH_KEY }}
+          source: ./frontend/build/   # Local build directory
+          target: /app/aztec/frontend/build/  # Target directory on the server
+
       # Deploy to Droplet via SSH
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v0.1.5
@@ -42,6 +52,3 @@ jobs:
             cd /app/aztec/backend
             npm install
             pm2 restart all  # Assuming PM2 is already managing your backend process
-
-            # Copy frontend build to /app/aztec/frontend/build from build frontend step
-            cp -r /github/workspace/frontend/build /app/aztec/frontend/build
