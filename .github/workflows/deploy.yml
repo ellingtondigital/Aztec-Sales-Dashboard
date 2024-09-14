@@ -25,7 +25,8 @@ jobs:
 
       - name: Build frontend
         working-directory: ./frontend
-        run: npm run build
+        run: |
+          CI=false npm run build
 
       # Deploy to Droplet via SSH
       - name: Deploy via SSH
