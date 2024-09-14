@@ -28,16 +28,6 @@ jobs:
         run: |
           CI=false npm run build
 
-      # Copy the frontend build files to the server
-      - name: Copy frontend build files
-        uses: appleboy/scp-action@v0.1.0
-        with:
-          host: ${{ secrets.DROPLET_IP }}
-          username: ${{ secrets.DROPLET_USER }}
-          key: ${{ secrets.DROPLET_SSH_KEY }}
-          source: ./frontend/build/   # Local build directory
-          target: /app/aztec/frontend/build/  # Target directory on the server
-
       # Deploy to Droplet via SSH
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v0.1.5
@@ -46,6 +36,8 @@ jobs:
           username: ${{ secrets.DROPLET_USER }}
           key: ${{ secrets.DROPLET_SSH_KEY }}
           script: |
+            echo "Successfully connected to the server"
+            ls -la /home/${{ secrets.DROPLET_USER }}  # List files in the home directory
             # Navigate to backend folder, pull latest changes, install dependencies, and restart PM2
             cd /app/aztec
             git pull origin main
