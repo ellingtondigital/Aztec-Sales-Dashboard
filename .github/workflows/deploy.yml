@@ -1,34 +1,46 @@
-name: Deploy Backend and Frontend to DigitalOcean
+name: Deploy to Droplet
 
 on:
   push:
     branches:
-      - main  # Trigger the workflow when changes are pushed to the main branch
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    # Step 4: Deploy to DigitalOcean Droplet via SSH
-    - name: Deploy via SSH
-      uses: appleboy/ssh-action@v0.1.5
-      with:
-        host: ${{ secrets.DROPLET_IP }}
-        username: ${{ secrets.DROPLET_USER }}
-        key: ${{ secrets.DROPLET_SSH_KEY }}
-        script: |
-          # Deploy backend
-          cd /path/to/your/droplet/backend
-          git pull origin main
-          npm install
-          pm2 restart all  # Assuming you're using PM2 for process management
-          
-          # Deploy frontend
-          cd /path/to/your/droplet/frontend
-          git pull origin main
-          npm install
-          npm run build
+      # Install dependencies and build frontend (on GitHub Actions server)
+      - name: Setup Node.js for frontend
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'  # Change this to your Node.js version
+
+      - name: Install frontend dependencies
+        working-directory: ./frontend
+        run: npm install
+
+      - name: Build frontend
+        working-directory: ./frontend
+        run: npm run build
+
+      # Deploy to Droplet via SSH
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v0.1.5
+        with:
+          host: ${{ secrets.DROPLET_IP }}
+          username: ${{ secrets.DROPLET_USER }}
+          key: ${{ secrets.DROPLET_SSH_KEY }}
+          script: |
+            # Navigate to backend folder, pull latest changes, install dependencies, and restart PM2
+            cd /app/aztec
+            git pull origin main
+            cd /app/aztec/backend
+            npm install
+            pm2 restart all  # Assuming PM2 is already managing your backend process
+
+            # Copy frontend build to /app/aztec/frontend/build from build frontend step
+            cp -r /github/workspace/frontend/build /app/aztec/frontend/build
