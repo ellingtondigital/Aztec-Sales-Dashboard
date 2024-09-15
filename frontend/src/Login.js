@@ -59,24 +59,23 @@
 
 // export default Login;
 
-import React, { useState } from 'react';
-import { Container, Form, Button, Alert } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { API_BASE_URL } from './config'; 
+import React, { useState } from "react";
+import { Container, Form, Button, Alert } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { API_BASE_URL } from "./config";
 
 const Login = ({ onLogin }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // const response = await fetch('http://localhost:5000/login', {
-        const response = await fetch(`${API_BASE_URL}/login`, {
-        method: 'POST',
+      const response = await fetch(`${API_BASE_URL}/login`, {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ username, password }),
       });
@@ -84,17 +83,23 @@ const Login = ({ onLogin }) => {
       if (response.ok) {
         onLogin();
       } else {
-        setError('Invalid credentials');
+        setError("Invalid credentials");
       }
     } catch (err) {
-      console.error('Error:', err);
-      setError('An error occurred');
+      console.error("Error:", err);
+      setError("An error occurred");
     }
   };
 
   return (
-    <Container className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-      <div className="border p-4 rounded" style={{ maxWidth: '400px', width: '100%' }}>
+    <Container
+      className="d-flex justify-content-center align-items-center"
+      style={{ height: "100vh" }}
+    >
+      <div
+        className="border p-4 rounded"
+        style={{ maxWidth: "400px", width: "100%" }}
+      >
         <h3 className="mb-3">Login</h3>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
@@ -125,6 +130,6 @@ const Login = ({ onLogin }) => {
       </div>
     </Container>
   );
-}
+};
 
 export default Login;
