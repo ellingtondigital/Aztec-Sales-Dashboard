@@ -1,10 +1,10 @@
 const environment = "development"; // Change to 'development' for local
 const config = {
   development: {
-    API_BASE_URL: "http://167.99.122.113:3000",
+    API_BASE_URL: "/api",
   },
   production: {
-    API_BASE_URL: "https://phpstack-1106520-4820851.cloudwaysapps.com",
+    API_BASE_URL: "/api",
   },
 };
 
