@@ -89,7 +89,7 @@ function FileUpload() {
 
     return (
         <div>
-            <h1>Upload .xlsx File</h1>
+            <h1>Upload test .xlsx File</h1>
             <input type="file" onChange={onFileChange} />
             <button onClick={onFileUpload}>Upload</button>
             {Object.keys(uploadedData).length > 0 && (
