@@ -1,53 +1,60 @@
-    import React from 'react';
-    import { Container, Row, Col, Card } from 'react-bootstrap';
-    import SimpleBarChart from '../charts/SimpleBarChart';
-    import Menubar from './Menubar';
+// export default Dashboard;
+import React, { useState } from "react";
+import { Container, Row, Col, Card } from "react-bootstrap";
+import SimpleBarChart from "../charts/LeadSource/SimpleBarChart";
+import MarketingBarChart from "../charts/Marketing/Marketing";
+import Menubar from "./Menubar";
+import { useUploadedData } from "../context/UploadedDataContext";
 
-    function Dashboard() {
-    return (
-        
-        
-        <Container>
-        {/* <h1>Dashboard</h1> */}
-        <Row style={{ border: '1px solid black', padding: '10px', }}>      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
-        <Menubar />
-        </div>
-        </Row>
+function Dashboard() {
+  const { uploadedData } = useUploadedData(); // Get available sheets
+  const [selectedSheet, setSelectedSheet] = useState("");
 
+  // Handle sheet change from Menubar
+  const handleSheetChange = (sheetName) => {
+    setSelectedSheet(sheetName);
+  };
 
-        <Row>
+  return (
+    <Container>
+      <Row
+        style={{
+          padding: "10px",
+        }}
+      >
+        <Menubar onSheetChange={handleSheetChange} />
+      </Row>
+      <Row>
         <Col md={12}>
-            <Card style={{ border: 'none' }}>
-                {/* <Card.Header>Lead Source Bar Chart</Card.Header> */}
-                <Card.Body>
-                <SimpleBarChart /> {/* Display the SimpleBarChart component */}
-                </Card.Body>
-            </Card>
+          <Card
+            style={{
+              border: "none",
+            }}
+          >
+            <Card.Body>
+              {" "}
+              {/* Conditionally render SimpleBarChart if 'Sheet1' (or relevant sheet) is selected */}{" "}
+              {selectedSheet === "Lead Source" && <SimpleBarChart />}{" "}
+            </Card.Body>{" "}
+          </Card>{" "}
         </Col>
-            {/* <Col md={4}>
-            <Card>
-                <Card.Header>Card Title 1</Card.Header>
-                <Card.Body>
-                <Card.Text>
-                    This is some content for the first card.
-                </Card.Text>
-                </Card.Body>
-            </Card>
-            </Col> */}
+        <Col md={12}>
+          <Card
+            style={{
+              border: "none",
+            }}
+          >
+            <Card.Body>
+              {" "}
+              {/* Conditionally render MarketingBarChart if 'Marketing' sheet is selected */}{" "}
+              {selectedSheet === "Marketing" && <MarketingBarChart />}{" "}
+            </Card.Body>{" "}
+          </Card>{" "}
+        </Col>
+        {/* You can add more charts here for different sheets */}{" "}
+      </Row>{" "}
+    </Container>
+  );
+}
 
-        {/* <Col md={4}>
-            <Card>
-                <Card.Header>Card Title 3</Card.Header>
-                <Card.Body>
-                <Card.Text>
-                    This is some content for the third card.
-                </Card.Text>
-                </Card.Body>
-            </Card>
-            </Col> */}
-        </Row>
-        </Container>
-    );
-    }
-
-    export default Dashboard;
+export default Dashboard;

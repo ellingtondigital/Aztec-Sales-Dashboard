@@ -1,73 +1,16 @@
-// // frontend/src/Login.js
-// import React, { useState } from 'react';
-// import { Container, Form, Button, Alert } from 'react-bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
-// const hardcodedUser = {
-//   username: 'test@gmail.com',
-//   password: '123456'
-// };
-
-// function Login({ onLogin }) {
-//   const [username, setUsername] = useState('');
-//   const [password, setPassword] = useState('');
-//   const [error, setError] = useState('');
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     if (username === hardcodedUser.username && password === hardcodedUser.password) {
-//       onLogin();
-//     } else {
-//       setError('Invalid credentials');
-//     }
-//   };
-
-//   return (
-//     <Container className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-//       <div className="border p-4 rounded" style={{ maxWidth: '400px', width: '100%' }}>
-//         <h3 className="mb-3">Login</h3>
-//         {error && <Alert variant="danger">{error}</Alert>}
-//         <Form onSubmit={handleSubmit}>
-//           <Form.Group className="mb-3" controlId="formBasicEmail">
-//             <Form.Label>Email address</Form.Label>
-//             <Form.Control
-//               type="email"
-//               placeholder="Enter email"
-//               value={username}
-//               onChange={(e) => setUsername(e.target.value)}
-//             />
-//           </Form.Group>
-
-//           <Form.Group className="mb-3" controlId="formBasicPassword">
-//             <Form.Label>Password</Form.Label>
-//             <Form.Control
-//               type="password"
-//               placeholder="Password"
-//               value={password}
-//               onChange={(e) => setPassword(e.target.value)}
-//             />
-//           </Form.Group>
-
-//           <Button variant="primary" type="submit">
-//             Login
-//           </Button>
-//         </Form>
-//       </div>
-//     </Container>
-//   );
-// }
-
-// export default Login;
-
 import React, { useState } from "react";
 import { Container, Form, Button, Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { API_BASE_URL } from "./config";
+import Logo from "../src/Screen/Logoimage.png";
+import { useNavigate } from "react-router-dom";  // Updated import
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();  // Hook to navigate
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -97,17 +40,27 @@ const Login = ({ onLogin }) => {
       style={{ height: "100vh" }}
     >
       <div
-        className="border p-4 rounded"
-        style={{ maxWidth: "400px", width: "100%" }}
+        className=""
+        style={{ maxWidth: "500px", width: "100%",border: "1px solid #ccc", borderRadius: "5px",padding: "20px",boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)" }}
       >
-        <h3 className="mb-3">Login</h3>
+        {/* Insert the image here */}
+        <div className="text-center mb-3">
+          <img
+            src={Logo}
+            alt="Logo"
+            style={{ maxWidth: "50%", height: "auto",paddingBottom: "30px" }}
+          />
+        </div>
+
+        <h3 className="mb-3 text-center">Login</h3>
         {error && <Alert variant="danger">{error}</Alert>}
+
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control
               type="email"
-              placeholder="Enter email"
+              placeholder="Enter your email"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
@@ -117,17 +70,44 @@ const Login = ({ onLogin }) => {
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
-              placeholder="Password"
+              placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit">
+          {/* Login Button */}
+          <Button
+            variant="primary"
+            type="submit"
+            style={{ backgroundColor: "#F36523", borderColor: "#F36523" }}
+          >
             Login
           </Button>
+
+          {/* Forgot Password Link */}
+          <div className="mt-3 text-center">
+          <Button
+  variant="link"
+  style={{ color: "#F36523" }}
+  onClick={() => navigate("/signup")}
+>
+  Don't have an account? Sign up here
+</Button>
+            <Button
+              variant="link"
+              style={{ color: "#F36523" }}
+              onClick={() => navigate("/forgot-password")} 
+            >
+              Forgot Password?
+            </Button>.
+          </div>
         </Form>
+        <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <p>&copy;  Copyright 2024 Aztec Solar, Inc. | Privacy Policy and Terms & Conditions | Disclaimer | CA Contractor License #550110| All Rights Reserved.</p>
       </div>
+      </div>
+
     </Container>
   );
 };

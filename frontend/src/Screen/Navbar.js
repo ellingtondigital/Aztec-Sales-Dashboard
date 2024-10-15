@@ -68,7 +68,7 @@ function NavigationBar() {
 
   return (
     <Navbar bg="light" expand="lg" >
-      <Navbar.Brand as={Link} to="/">
+      <Navbar.Brand as={Link} to="/dashboard">
         <img
           src={logo}
           alt="Logo"

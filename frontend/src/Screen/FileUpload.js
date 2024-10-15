@@ -111,3 +111,4 @@ function FileUpload() {
 }
 
 export default FileUpload;
+// mysql -u doadmin -p -h aztech-db-mysql-do-user-14784423-0.k.db.ondigitalocean.com -P 25060 defaultdb < aztec.sql

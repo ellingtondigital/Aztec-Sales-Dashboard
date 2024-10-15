@@ -6,7 +6,7 @@ module.exports = {
     //   user: 'root', // Replace with your MySQL username
     //   password: 'root', // Replace with your MySQL password
     //   database: 'xldashboard'
-    // }
+    // },
 
     baseUrl: 'http://167.99.120.218:5000',
     mysql: {
@@ -15,5 +15,7 @@ module.exports = {
         user: 'root', // replace with your MySQL username
         password: '123asdf4', // replace with your MySQL password
         database: 'aztec'
-    }
+    },
+
+
   };

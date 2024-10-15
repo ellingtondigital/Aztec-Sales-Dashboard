@@ -1,56 +1,49 @@
   .
+  ├─  .github
+  ├─  ├─  workflows
+  ├─  ├─  ├─  ├─ deploy.yml
+  ├─  ├─ .gitignore
+  ├─  ├─ Aztec.sql
   ├─  backend
+  ├─  ├─  ├─ .gitignore
+  ├─  ├─  ├─ config.js
+  ├─  ├─  ├─ config.js.save
+  ├─  ├─  controllers
+  ├─  ├─  ├─  ├─ loginController.js
   ├─  ├─  ├─ package-lock.json
   ├─  ├─  ├─ package.json
+  ├─  ├─  routes
+  ├─  ├─  ├─  ├─ loginRoutes.js
   ├─  ├─  ├─ server.js
-  ├─  ├─  uploads
-  ├─  ├─  ├─  ├─ file-1723718991969.xlsx
-  ├─  ├─  ├─  ├─ file-1723719125937.xlsx
-  ├─  ├─  ├─  ├─ file-1723719259090.xlsx
-  ├─  ├─  ├─  ├─ file-1723719364954.xlsx
-  ├─  ├─  ├─  ├─ file-1723719373896.xlsx
-  ├─  ├─  ├─  ├─ file-1723719382255.xlsx
-  ├─  ├─  ├─  ├─ file-1723719449609.xlsx
-  ├─  ├─  ├─  ├─ file-1723719561363.xlsx
-  ├─  ├─  ├─  ├─ file-1723719630593.xlsx
-  ├─  ├─  ├─  ├─ file-1723719673728.xlsx
-  ├─  ├─  ├─  ├─ file-1723719710408.xlsx
-  ├─  ├─  ├─  ├─ file-1723719718582.xlsx
-  ├─  ├─  ├─  ├─ file-1723719725607.xlsx
-  ├─  ├─  ├─  ├─ file-1723719731407.xlsx
-  ├─  ├─  ├─  ├─ file-1723719991915.xlsx
-  ├─  ├─  ├─  ├─ file-1723720018552.xlsx
-  ├─  ├─  ├─  ├─ file-1723720025305.xlsx
-  ├─  ├─  ├─  ├─ file-1723720185817.xlsx
-  ├─  ├─  ├─  ├─ file-1723720203217.xlsx
-  ├─  ├─  ├─  ├─ file-1723720573618.xlsx
-  ├─  ├─  ├─  ├─ file-1723720913849.xlsx
-  ├─  ├─  ├─  ├─ file-1723728476538.xlsx
-  ├─  ├─  ├─  ├─ file-1723728517166.xlsx
-  ├─  ├─  ├─  ├─ file-1723728541986.xlsx
-  ├─  ├─  ├─  ├─ file-1723728570163.xlsx
-  ├─  ├─  ├─  ├─ file-1723728603250.xlsx
-  ├─  ├─  ├─  ├─ file-1723728705960.xlsx
-  ├─  ├─  ├─  ├─ file-1723729093768.xlsx
-  ├─  ├─  ├─  ├─ file-1723729119174.xlsx
-  ├─  ├─  ├─  ├─ file-1723729196833.xlsx
-  ├─  ├─  ├─  ├─ file-1724210562947.xlsx
-  ├─  ├─  ├─  ├─ file-1724223223873.xlsx
-  ├─  ├─  ├─  ├─ file-1724223836239.xlsx
-  ├─  ├─  ├─  ├─ file-1724225345090.xlsx
-  ├─  ├─  ├─  ├─ file-1724225796465.xlsx
-  ├─  ├─  ├─  ├─ file-1724225959947.xlsx
-  ├─  ├─  ├─  ├─ file-1724226533838.xlsx
-  ├─  ├─  ├─  ├─ file-1724226652901.xlsx
-  ├─  ├─  ├─  ├─ file-1724226918805.xlsx
-  ├─  ├─  ├─  ├─ file-1724227784673.xlsx
-  ├─  ├─  ├─  ├─ file-1724229396148.xlsx
-  ├─  ├─  ├─  ├─ file-1724230687145.xlsx
-  ├─  ├─  ├─  ├─ file-1724234741831.xlsx
-  ├─  ├─  ├─  ├─ file-1724234752778.xlsx
   ├─  ├─ folderStructure.txt
   ├─  frontend
   ├─  ├─  ├─ .gitignore
+  ├─  ├─  build
+  ├─  ├─  ├─  ├─ asset-manifest.json
+  ├─  ├─  ├─  ├─ favicon.ico
+  ├─  ├─  ├─  ├─ index.html
+  ├─  ├─  ├─  ├─ logo192.png
+  ├─  ├─  ├─  ├─ logo512.png
+  ├─  ├─  ├─  ├─ manifest.json
+  ├─  ├─  ├─  ├─ robots.txt
+  ├─  ├─  ├─  static
+  ├─  ├─  ├─  ├─  css
+  ├─  ├─  ├─  ├─  ├─  ├─ 2.88761f2b.chunk.css
+  ├─  ├─  ├─  ├─  ├─  ├─ 2.88761f2b.chunk.css.map
+  ├─  ├─  ├─  ├─  ├─  ├─ main.6dea0f05.chunk.css
+  ├─  ├─  ├─  ├─  ├─  ├─ main.6dea0f05.chunk.css.map
+  ├─  ├─  ├─  ├─  js
+  ├─  ├─  ├─  ├─  ├─  ├─ 2.2cc421ec.chunk.js
+  ├─  ├─  ├─  ├─  ├─  ├─ 2.2cc421ec.chunk.js.LICENSE.txt
+  ├─  ├─  ├─  ├─  ├─  ├─ 2.2cc421ec.chunk.js.map
+  ├─  ├─  ├─  ├─  ├─  ├─ 3.6ed131aa.chunk.js
+  ├─  ├─  ├─  ├─  ├─  ├─ 3.6ed131aa.chunk.js.map
+  ├─  ├─  ├─  ├─  ├─  ├─ main.50493a54.chunk.js
+  ├─  ├─  ├─  ├─  ├─  ├─ main.50493a54.chunk.js.map
+  ├─  ├─  ├─  ├─  ├─  ├─ runtime-main.953951b1.js
+  ├─  ├─  ├─  ├─  ├─  ├─ runtime-main.953951b1.js.map
+  ├─  ├─  ├─  ├─  media
+  ├─  ├─  ├─  ├─  ├─  ├─ Logoimage.3636d39a.png
   ├─  ├─  ├─ package-lock.json
   ├─  ├─  ├─ package.json
   ├─  ├─  public
@@ -58,6 +51,7 @@
   ├─  ├─  ├─  ├─ index.html
   ├─  ├─  ├─  ├─ logo192.png
   ├─  ├─  ├─  ├─ logo512.png
+  ├─  ├─  ├─  ├─ Logoimage.png
   ├─  ├─  ├─  ├─ manifest.json
   ├─  ├─  ├─  ├─ robots.txt
   ├─  ├─  ├─ README.md
@@ -66,10 +60,14 @@
   ├─  ├─  ├─  ├─ App.js
   ├─  ├─  ├─  ├─ App.test.js
   ├─  ├─  ├─  charts
+  ├─  ├─  ├─  ├─  ├─ Marketing.js
   ├─  ├─  ├─  ├─  ├─ SimpleBarChart.css
   ├─  ├─  ├─  ├─  ├─ SimpleBarChart.js
+  ├─  ├─  ├─  ├─ config.js
   ├─  ├─  ├─  context
+  ├─  ├─  ├─  ├─  ├─ copiright.js
   ├─  ├─  ├─  ├─  ├─ UploadedDataContext.js
+  ├─  ├─  ├─  ├─ ForgotPassword.js
   ├─  ├─  ├─  ├─ index.css
   ├─  ├─  ├─  ├─ index.js
   ├─  ├─  ├─  ├─ Login.js
@@ -78,6 +76,10 @@
   ├─  ├─  ├─  Screen
   ├─  ├─  ├─  ├─  ├─ Dashboard.js
   ├─  ├─  ├─  ├─  ├─ FileUpload.js
+  ├─  ├─  ├─  ├─  ├─ Logoimage.png
+  ├─  ├─  ├─  ├─  ├─ Menubar.js
   ├─  ├─  ├─  ├─  ├─ Navbar.js
   ├─  ├─  ├─  ├─ setupTests.js
   ├─  ├─ generateFolderStructure.js
+  ├─  ├─ package-lock.json
+  ├─  ├─ Readme

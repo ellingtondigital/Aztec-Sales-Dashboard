@@ -3,12 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Login from './Login';
+import ForgotPassword from './ForgotPassword';
 import { Container } from 'react-bootstrap';
 import FileUpload from './Screen/FileUpload';
 import NavigationBar from './Screen/Navbar';
 import Dashboard from './Screen/Dashboard';
 import { UploadedDataProvider } from './context/UploadedDataContext';
-
+import SignUp from './SignUp';
+import ResetPassword from './ResetPassword';
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [uploadedData, setUploadedData] = useState({});
@@ -60,6 +62,10 @@ function App() {
                 ? <Dashboard /> 
                 : <Navigate to="/" />} 
             />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
+            
+            <Route path="/signup" element={<SignUp />} />
             {/* Add other routes as needed */}
           </Routes>
         </Container>
