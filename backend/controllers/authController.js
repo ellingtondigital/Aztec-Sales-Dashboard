@@ -48,8 +48,8 @@ exports.forgotPassword = (req, res) => {
       }
 
       // Send password reset email
-    //   const resetLink = `${baseUrl}/reset-password?token=${resetToken}`;
-    const resetLink = `http://localhost:3000/reset-password?token=${resetToken}`;
+      const resetLink = `${baseUrl}/reset-password?token=${resetToken}`;
+    // const resetLink = `http://localhost:3000/reset-password?token=${resetToken}`;
       const mailOptions = {
         from: 'pasidhu@visionarydv.com', // Change to the email from which you want to send
         to: email,
