@@ -8,7 +8,7 @@ module.exports = {
     //   database: 'xldashboard'
     // },
 
-    baseUrl: 'https://dashboard.aztecsolar.com/api',
+    baseUrl: '/api',
     mysql: {
         port: 3306,
         host: process.env.MYSQL_HOST,
