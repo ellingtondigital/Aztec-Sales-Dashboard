@@ -8,14 +8,15 @@ module.exports = {
     //   database: 'xldashboard'
     // },
 
-    baseUrl: 'http://167.99.120.218:5000',
+    baseUrl: 'https://dashboard.aztecsolar.com/api',
     mysql: {
         port: 3306,
-        host: '167.99.120.218',
-        user: 'root', // replace with your MySQL username
-        password: '123asdf4', // replace with your MySQL password
-        database: 'aztec'
+        host: process.env.MYSQL_HOST,
+        user: process.env.MYSQL_USER,
+        password: process.env.MYSQL_PASSWORD,
+        database: process.env.MYSQL_DB,
     },
-
+//!SECTION
 //!SECTION
   };
+

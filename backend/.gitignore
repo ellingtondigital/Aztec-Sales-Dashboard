@@ -30,3 +30,6 @@ coverage/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Ignore config files with sensitive data
+/backend/config.js
