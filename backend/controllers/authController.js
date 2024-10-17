@@ -12,8 +12,8 @@ const transporter = nodemailer.createTransport({
   host: 'smtp.mandrillapp.com',
   port: 587,
   auth: {
-    user: '804bf6672f6952a333d556ff1fa4713a',  // Mandrill API key
-    pass: 'md-09TkWfImNBBoItDHgCp0MA',  // Mandrill API password
+    user: '',  // Mandrill API key
+    pass: '',  // Mandrill API password
   },
 });
 
